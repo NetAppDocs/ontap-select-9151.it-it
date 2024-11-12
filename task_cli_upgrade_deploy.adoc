@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: task_cli_upgrade_deploy.html 
+keywords: administer, administering, cli, deploy, upgrade deploy 
+summary: 'È possibile aggiornare una macchina virtuale dell"utility di implementazione esistente in-place utilizzando l"interfaccia della riga di comando.' 
+---
+= Aggiornare un'istanza di implementazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile aggiornare una macchina virtuale dell'utility di implementazione esistente in-place utilizzando l'interfaccia della riga di comando.
+
+
+
+== Prima di iniziare
+
+Assicurarsi che la distribuzione non venga utilizzata per eseguire altre attività durante l'aggiornamento. Per informazioni e restrizioni sull'aggiornamento dell'utility di distribuzione, consultare le note di rilascio correnti.
+
+
+NOTE: Se è installata un'istanza precedente dell'utilità di amministrazione di distribuzione di ONTAP Select, è necessario eseguire l'aggiornamento alla versione corrente. Il nodo ONTAP Select e il componente di implementazione ONTAP Select vengono aggiornati in modo indipendente. Per ulteriori informazioni, vedere link:concept_adm_upgrading_nodes.html["Aggiornare i nodi ONTAP Select"^] .
+
+
+
+== Scaricare il pacchetto di aggiornamento
+
+Per iniziare il processo di aggiornamento, è necessario scaricare il file di aggiornamento della macchina virtuale di implementazione appropriato dal sito del supporto NetApp. Il pacchetto di aggiornamento viene formattato come un singolo file compresso.
+
+.Fasi
+. Accedere a link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] utilizzando un browser Web e scegliere *Download* dal menu Download.
+. Scorrere verso il basso e selezionare *ONTAP Select Deploy Upgrade*.
+. Selezionare la versione desiderata del pacchetto di aggiornamento.
+. Leggere il Contratto di licenza con l'utente finale (EULA) e selezionare *Accetta e continua*.
+. Selezionare e scaricare il pacchetto appropriato, rispondendo a tutti i prompt necessari per il proprio ambiente.
+
+
+
+
+== Caricare il pacchetto sulla macchina virtuale di distribuzione
+
+Dopo aver acquisito il pacchetto di aggiornamento, è necessario caricare il file sulla macchina virtuale di implementazione.
+
+.Prima di iniziare
+Il file di aggiornamento deve essere disponibile sulla workstation locale. È inoltre necessario disporre della password per l'account utente amministratore.
+
+.A proposito di queste attività
+Questa attività descrive un metodo per caricare il file sulla macchina virtuale di implementazione. Potrebbero essere disponibili altre opzioni più adatte al proprio ambiente.
+
+.Fasi
+. In una shell di comandi sulla workstation locale, utilizzare l'utility SCP per caricare il file di immagine sulla macchina virtuale di implementazione.
++
+Esempio
+
++
+....
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
+....
+
+
+.Risultato
+Il file di aggiornamento viene memorizzato nella home directory dell'utente amministratore.
+
+
+
+== Applicare il pacchetto di aggiornamento
+
+Una volta caricato il file di aggiornamento sulla macchina virtuale di implementazione, è possibile applicare l'aggiornamento.
+
+.Prima di iniziare
+È necessario conoscere la directory in cui è stato inserito il file di aggiornamento nella macchina virtuale dell'utility di implementazione. Inoltre, assicurarsi che l'implementazione non venga utilizzata per eseguire altre attività durante l'aggiornamento.
+
+.Fasi
+. Accedere alla CLI dell'utility di implementazione utilizzando SSH con l'account amministratore.
+. Eseguire l'aggiornamento utilizzando il percorso di directory e il nome file appropriati:
++
+`deploy upgrade -package-path FILEPATH`
+
++
+Esempio
+
++
+....
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
+....
+
+
+.Al termine
+Prima del completamento della procedura di aggiornamento, viene richiesto di creare un backup della configurazione della macchina virtuale di distribuzione. Inoltre, è necessario cancellare la cache del browser in modo da poter visualizzare le pagine di distribuzione appena create.

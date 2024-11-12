@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_general.html 
+keywords: plan, planning, ontap select deploy, general requirements 
+summary: 'Nell"ambito della pianificazione dell"installazione dell"utilità di amministrazione di ONTAP Select Deploy, è necessario prendere in considerazione diversi requisiti generali.' 
+---
+= ONTAP Select implementa requisiti generali e pianificazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nell'ambito della pianificazione dell'installazione dell'utilità di amministrazione di ONTAP Select Deploy, è necessario prendere in considerazione diversi requisiti generali.
+
+
+
+== Associazione dell'utility di implementazione con i cluster ONTAP Select
+
+Sono disponibili diverse opzioni per l'associazione di un'istanza dell'utilità di implementazione con i cluster ONTAP Select.
+
+
+NOTE: In tutti gli scenari di implementazione, un singolo cluster ONTAP Select e i nodi nel cluster possono essere gestiti da una sola istanza dell'utilità di amministrazione di Deploy. Un cluster non può essere gestito da due o più istanze diverse dell'utilità di implementazione.
+
+.Un'istanza dell'utility per ciascun cluster ONTAP Select
+È possibile implementare e gestire ciascun cluster ONTAP Select utilizzando un'istanza dedicata dell'utilità di implementazione. Con questa configurazione one-to-one, esiste una chiara separazione tra ogni collegamento utility-cluster. Questa configurazione offre un elevato livello di isolamento con domini di errore più piccoli.
+
+.Un'istanza dell'utility per più cluster ONTAP Select
+È possibile implementare e gestire più cluster ONTAP Select all'interno dell'organizzazione utilizzando una singola istanza dell'utilità di implementazione. Con questa configurazione one-to-many, tutti i dati di elaborazione e configurazione vengono gestiti dalla stessa istanza dell'utilità di implementazione.
+
+
+NOTE: Un'istanza dell'utilità di implementazione può amministrare fino a 400 nodi ONTAP Select o 100 cluster.
+
+
+
+== Requisiti relativi all'ambiente KVM
+
+Prima di installare l'utilità di amministrazione di deploy in un ambiente hypervisor KVM, è necessario esaminare i requisiti di base e prepararsi per la distribuzione.
+
+.Requisiti e restrizioni per un'implementazione
+Quando si installa l'utilità di distribuzione ONTAP Select in un ambiente KVM, è necessario prendere in considerazione diversi requisiti e restrizioni.
+
+.Requisiti hardware del server host KVM Linux
+Ci sono diversi requisiti minimi di risorse che il vostro host hypervisor KVM Linux deve soddisfare. Verificare che gli host su cui viene distribuito ONTAP Select soddisfino i seguenti requisiti di base:
+
+* Server Linux:
++
+** L'hardware e il software devono essere a 64 bit
+** Il server deve essere conforme alle stesse versioni supportate definite per un nodo ONTAP Select
+
+
+* CPU virtuali (2)
+* Memoria virtuale (4 GB)
+* Conveniente (40GB)
+* "DHCP (Dynamic host Configuration Protocol) è attivato (è anche possibile assegnare un indirizzo IP statico)
+
+
+.Connettività di rete
+Verificare che l'interfaccia di rete della macchina virtuale di distribuzione sia configurata e sia in grado di connettersi agli host ONTAP Select che gestisce.
+
+.Supporto per IP versione 4
+ONTAP Select Deploy supporta solo IP versione 4 (IPv4). IP versione 6 (IPv6) non supportato. Questa restrizione interessa ONTAP Select nei seguenti modi:
+
+* Devi assegnare un indirizzo IPv4 alla LIF di gestione della macchina virtuale deploy.
+* L'implementazione non può creare nodi ONTAP Select configurati per l'utilizzo di IPv6 sulle LIF ONTAP.
+
+
+
+
+== Informazioni di configurazione richieste
+
+Nell'ambito della pianificazione della distribuzione, è necessario determinare le informazioni di configurazione richieste prima di installare l'utilità di amministrazione di ONTAP Select Deploy.
+
+.Nome della macchina virtuale da implementare
+Il nome da utilizzare per la macchina virtuale.
+
+.Nome dell'host KVM di Linux
+L'host KVM di Linux in cui è installata l'utilità di distribuzione.
+
+.Nome del pool di archiviazione
+Pool di storage che contiene i file della VM (sono necessari circa 40GB MB).
+
+.Rete per la macchina virtuale
+La rete in cui è connessa la VM di implementazione.
+
+
+
+== Informazioni opzionali sulla configurazione di rete
+
+Per impostazione predefinita, la macchina virtuale da distribuire viene configurata utilizzando il protocollo DHCP. Tuttavia, se necessario, è possibile configurare manualmente l'interfaccia di rete per la VM.
+
+.Nome host
+Il nome dell'host.
+
+.Host IP address (Indirizzo IP host)
+L'indirizzo IPv4 statico.
+
+.Subnet mask
+La maschera di sottorete, basata sulla rete di cui fa parte la VM.
+
+.Gateway
+Il gateway o il router predefinito.
+
+.Server DNS primario
+Il server dei nomi di dominio principale.
+
+.Server DNS secondario
+Il server dei nomi di dominio secondario.
+
+.Cerca domini
+I domini di ricerca da utilizzare.
+
+
+
+== Autenticazione mediante l'archivio delle credenziali
+
+L'archivio credenziali ONTAP Select Deploy è un database che contiene le informazioni sull'account. L'implementazione utilizza le credenziali dell'account per eseguire l'autenticazione host come parte della creazione e della gestione del cluster. È necessario conoscere il modo in cui l'archivio di credenziali viene utilizzato per pianificare un'implementazione di ONTAP Select.
+
+
+NOTE: Le informazioni sull'account vengono memorizzate in modo sicuro nel database utilizzando l'algoritmo di crittografia AES e l'algoritmo di hashing SHA-256.
+
+.Tipi di credenziali
+Sono supportati i seguenti tipi di credenziali:
+
+* Host utilizzato per autenticare un host hypervisor come parte dell'implementazione di un nodo ONTAP Select direttamente su VMware ESXi
+* VCenter utilizzato per autenticare un server vCenter come parte dell'implementazione di un nodo ONTAP Select in ESXi quando l'host viene gestito da VMware vCenter
+
+
+.Accesso
+L'accesso all'archivio delle credenziali viene eseguito internamente durante l'esecuzione delle normali attività amministrative mediante l'implementazione, ad esempio l'aggiunta di un host hypervisor. È inoltre possibile gestire l'archivio di credenziali direttamente tramite l'interfaccia utente Web di implementazione e la CLI.
