@@ -87,7 +87,6 @@ Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggi
 
 * Protezione ransomware autonoma (ARP)
 * IPSpace del cluster qualsiasi modifica a IPSpace del cluster, compresa l'aggiunta o la rimozione di porte, LAN virtuali (VLAN) o gruppi di aggregazione dei collegamenti non è supportata.
-* ESXi 8,0 U3
 * Fibre Channel Fibre Channel e Fibre Channel over Ethernet non sono supportati.
 * Monitoraggio dello stato di salute il monitoraggio tradizionale dello stato di salute utilizzato con un'implementazione ONTAP basata su hardware è specifico per i componenti hardware sottostanti. A causa dell'ambiente virtualizzato utilizzato con ONTAP Select, i monitor dello stato di salute non sono attivi.
 * Gruppi di interfacce i gruppi di interfacce non sono supportati.
