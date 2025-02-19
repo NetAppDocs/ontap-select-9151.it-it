@@ -3638,7 +3638,6 @@
   <block id="250f6d868aabeaced76663cb583769da" category="sidebar">Gestire i cluster</block>
   <block id="6a66d4f800a8576eee650d6dd676dd9d" category="sidebar">Utilizzare l'API REST</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">Più risorse</block>
-  <block id="2cf665df8bcce3d8608ac2923c3934b2" category="sidebar">Pagina delle risorse di ONTAP Select</block>
   <block id="fa0fa8503380df9df5c58ad57a531ff5" category="sidebar">Libreria di prodotti ONTAP Select</block>
   <block id="c09b5be4c2da04f4040eef1878f258aa" category="sidebar">Documentazione di ONTAP 9</block>
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">Blog ONTAP Select</block>
@@ -3725,4 +3724,11 @@
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8,0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8,0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7,0 U3</block>
+  <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">Per scaricare l'utilità di amministrazione di distribuzione di ONTAP Select, è necessario disporre di quanto segue:</block>
+  <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">Registrazione utente</block>
+  <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">Un account registrato sul sito del supporto NetApp. Se non si dispone di un account, vedere<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>.</block>
+  <block id="4c38e9c9635f62bc0c98a4fc0dbf6f04" category="inline-link">Accettare il contratto di licenza per l'utente finale</block>
+  <block id="bcb0a8f0933f79963f8da791712307a2" category="list-text"><block ref="b36a96015925128ab0074fda8004c795" category="inline-link-rx"></block>Per una distribuzione ONTAP Select con una licenza di valutazione.</block>
+  <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">Hai un account registrato sul sito di supporto NetApp</block>
+  <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>.</block>
 </blocks>

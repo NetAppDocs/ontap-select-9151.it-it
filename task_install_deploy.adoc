@@ -22,6 +22,9 @@ summary: 'È necessario installare l"utility di amministrazione di ONTAP Select 
 
 È possibile scaricare il pacchetto ONTAP Select dal sito di supporto NetApp.
 
+.Prima di iniziare
+https://mysupport.netapp.com/site/user/registration["Hai un account registrato sul sito di supporto NetApp"^].
+
 .A proposito di questa attività
 L'utility di amministrazione di ONTAP Select Deploy è predisposta come macchina virtuale (VM) basata sullo standard OVF (Open Virtualization Format). Il singolo file compresso ha il suffisso `ova`. La VM fornisce le immagini di installazione e del server di implementazione per i nodi ONTAP Select.
 

@@ -16,6 +16,15 @@ summary: 'È possibile utilizzare una licenza di valutazione se si desidera valu
 [role="lead"]
 È possibile utilizzare una licenza di valutazione se si desidera valutare ONTAP Select prima di prendere la decisione di acquisto. La licenza di valutazione è inclusa nell'utility di amministrazione di ONTAP Select Deploy e viene applicata automaticamente a ciascun nodo ONTAP Select come parte di un'implementazione di valutazione.
 
+[NOTE]
+====
+Per scaricare l'utilità di amministrazione di distribuzione di ONTAP Select, è necessario disporre di quanto segue:
+
+* Un account registrato sul sito del supporto NetApp. Se non si dispone di un account, vedere https://mysupport.netapp.com/site/user/registration["Registrazione utente"^].
+*  https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["Accettare il contratto di licenza per l'utente finale"^]Per una distribuzione ONTAP Select con una licenza di valutazione.
+
+
+====
 
 
 == Caratteristiche di licensing
