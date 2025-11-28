@@ -97,6 +97,7 @@ Diverse funzionalità di ONTAP non sono supportate con ONTAP Select. Nella maggi
 * Processori di servizio
 * Migrazione SVM
 * Conformità SnapLock
+* Sincronizzazione attiva SnapMirror
 * VMware HCX
 
 
