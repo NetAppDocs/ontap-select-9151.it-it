@@ -48,7 +48,7 @@ Ogni istanza del Manager di licenza, e quindi ogni istanza dell'utility di imple
 È possibile determinare l'ID del blocco di licenza per l'istanza di implementazione utilizzando l'interfaccia utente Web nei seguenti modi:
 
 * Getting Started page questa pagina viene visualizzata quando si effettua il primo accesso per la distribuzione. È inoltre possibile visualizzare la pagina facendo clic sulla casella a discesa in alto a destra della pagina e selezionando Guida introduttiva. L'LLID viene visualizzato nella sezione Add Licenses (Aggiungi licenze).
-* Amministrazione fare clic sulla scheda *Amministrazione* nella parte superiore della pagina, quindi fare clic su *sistemi* e *Impostazioni*.
+* Amministrazione Fai clic sulla scheda *Amministrazione* nella parte superiore della pagina, quindi fai clic su *Systems & AutoSupport*.
 
 
 
