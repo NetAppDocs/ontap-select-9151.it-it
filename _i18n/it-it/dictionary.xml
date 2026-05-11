@@ -3711,4 +3711,6 @@
   <block id="3712f888ec8c939491ff4fe2129b3d6e" category="paragraph">MetroCluster SDS è un'opzione di configurazione disponibile per la creazione di un cluster a due nodi ONTAP Select. È simile a una distribuzione Remote Office/Branch Office (ROBO). Questa distribuzione avanzata a due nodi offre scenari di utilizzo aggiuntivi. È importante essere a conoscenza dei requisiti e delle limitazioni prima di procedere alla distribuzione di MetroCluster SDS.</block>
   <block id="c661d298cd420b7b6d7d3a82d9089108" category="admonition">L'overhead di VMFS è diverso da zero (vedere VMware KB 1001618) e il tentativo di utilizzare tutto lo spazio segnalato come libero da un datastore ha generato errori spuri durante le operazioni di creazione del cluster.</block>
   <block id="7436b418bed093768e360d32105591d2" category="sidebar">Documentazione di ONTAP Select</block>
+  <block id="02eaca23acd9bd60cfee240891736083" category="inline-link-macro">FlexCache write-back con ONTAP Select</block>
+  <block id="829a60be78f33e711c960543ff962d08" category="paragraph">Esistono delle limitazioni al supporto per la scrittura inversa di FlexCache con ONTAP Select. Per ulteriori informazioni, fare riferimento a <block ref="43b5c38e400537347d857d4ad7b2dd01" category="inline-link-macro-rx"></block>.</block>
 </blocks>
